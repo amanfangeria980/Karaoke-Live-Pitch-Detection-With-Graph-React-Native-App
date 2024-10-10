@@ -10,7 +10,13 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow riyazApp to access your microphone."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
@@ -28,14 +34,27 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.amanabhi.riyaz"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.amanabhi.riyaz"
+      "package": "com.amanabhi.riyaz",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c25afe00-7eb5-49a2-8c5e-60c4ab87e444"
+      }
     }
   }
 }
